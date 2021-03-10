@@ -22,7 +22,6 @@ import java.util.List;
 public class Dog extends Entity{
 
     private String name;
-
     private Long chipNumber;
     private String dateOfBirth;           ;
     private boolean adopted;
@@ -31,7 +30,6 @@ public class Dog extends Entity{
 
     @ManyToOne
     private Employee employee;
-
 
 
     @ManyToOne
