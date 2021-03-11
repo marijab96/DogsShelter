@@ -2,9 +2,13 @@ package util;
 
 
 import com.github.javafaker.Faker;
+import controller.AdministratorProcessor;
+import model.Administrator;
 import model.Box;
 import model.Employee;
 import org.hibernate.Session;
+import org.mindrot.jbcrypt.BCrypt;
+
 import java.math.BigDecimal;
 
 
@@ -52,14 +56,23 @@ public class InitialFixtures {
         s.getTransaction().commit();
 
 
-        /*Administrator a = new Administrator();
+        Administrator a = new Administrator();
         a.setFirstName("Marija");
-        a.setLastName("Bralic");
+        a.setLastName("Bralić");
         a.setEmail("marija.bralic96@gmail.com");
         a.setOib(OibCheck.getOibIiCentral());
         a.setUserName("marija");
         a.setPassword(BCrypt.hashpw("marija", BCrypt.gensalt()));
-*/
+
+        AdministratorProcessor ap = new AdministratorProcessor();
+        ap.setEntity(a);
+
+
+        try {
+            ap.create();
+        } catch (MyException exception) {
+            System.out.println(exception.getMessage());
+        }
 
 
 
