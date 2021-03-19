@@ -77,30 +77,6 @@ public class InitialFixtures {
         s.getTransaction().commit();
 
 
-        Administrator a = new Administrator();
-        a.setFirstName("Marija");
-        a.setLastName("Bralić");
-        a.setEmail("marija.bralic96@gmail.com");
-        a.setOib(OibCheck.getOibIsCentral());
-        a.setUserName("marija");
-        a.setPassword(BCrypt.hashpw("marija", BCrypt.gensalt()));
-
-        AdministratorProcessor ap = new AdministratorProcessor();
-        ap.setEntity(a);
-
-
-        try {
-            ap.create();
-        } catch (MyException exception) {
-            System.out.println(exception.getMessage());
-        }
-
-
-
-
     }
-
-
-
 
 }
