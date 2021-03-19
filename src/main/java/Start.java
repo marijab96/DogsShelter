@@ -1,5 +1,7 @@
 import controller.BoxProcessor;
+import controller.SpeciesProcessor;
 import model.Box;
+import model.Species;
 import org.hibernate.Session;
 import util.HibernateUtil;
 import util.InitialFixtures;
@@ -17,12 +19,19 @@ public class Start {
         InitialFixtures.start();
 
 
-        BoxProcessor bx = new BoxProcessor();
-        Box b = new Box();
-        bx.setEntity(b);
+        SpeciesProcessor sp = new SpeciesProcessor();
+
+        Species species = sp.getData().get(1);
+        sp.setEntity(species);
+        try {
+            sp.delete();
+        } catch (MyException e) {
+            e.printStackTrace();
+        }
+
 
         try {
-            bx.create();
+            sp.create();
         } catch (MyException e){
             System.out.println(e.getMessage());
     }
