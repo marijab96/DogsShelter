@@ -36,7 +36,7 @@ public class OibCheck {
         return control == Integer.parseInt(oib.substring(10));
     }
 
-    public static String getOibIiCentral() {
+    public static String getOibIsCentral() {
         try {
             String html = new Scanner(new URL("http://oib.itcentrala.com/oib-generator/").openStream(), "UTF-8").useDelimiter("\\A").next();
 

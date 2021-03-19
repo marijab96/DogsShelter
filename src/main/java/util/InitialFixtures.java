@@ -27,7 +27,7 @@ public class InitialFixtures {
             e = new Employee();
             e.setFirstName((faker.name().firstName()));
             e.setLastName(faker.name().lastName());
-            e.setOib(OibCheck.getOibIiCentral());
+            e.setOib(OibCheck.getOibIsCentral());
             e.setMobileNumber(faker.phoneNumber().cellPhone());
             s.save(e);
         }
@@ -40,7 +40,7 @@ public class InitialFixtures {
             e = new Employee();
             e.setFirstName((faker.name().firstName()));
             e.setLastName(faker.name().lastName());
-            e.setOib(OibCheck.getOibIiCentral());
+            e.setOib(OibCheck.getOibIsCentral());
             e.setMobileNumber(faker.phoneNumber().cellPhone());
             s.save(e);
 
@@ -81,7 +81,7 @@ public class InitialFixtures {
         a.setFirstName("Marija");
         a.setLastName("Bralić");
         a.setEmail("marija.bralic96@gmail.com");
-        a.setOib(OibCheck.getOibIiCentral());
+        a.setOib(OibCheck.getOibIsCentral());
         a.setUserName("marija");
         a.setPassword(BCrypt.hashpw("marija", BCrypt.gensalt()));
 
