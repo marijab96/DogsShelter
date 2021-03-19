@@ -7,7 +7,7 @@ import us.codecraft.xsoup.Xsoup;
 
 public class OibCheck {
 
-    public static boolean OibValidation (String oib) {
+    public static boolean oibValidation (String oib) {
 
         if (oib.length() != 11) {
             return false;
