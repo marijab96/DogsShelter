@@ -26,8 +26,8 @@ public class Authorization extends javax.swing.JFrame {
     public Authorization() {
         initComponents();
         
-        txtEmail.setText("marija.bralic96@gmail.com");
-        pswPassword.setText("marija");
+        txtEmail.setText("dogsshelter@gmail.com");
+        pswPassword.setText("fredi");
     }
 
     /**
@@ -46,9 +46,10 @@ public class Authorization extends javax.swing.JFrame {
         btnLogIn = new javax.swing.JButton();
         pswPassword = new javax.swing.JPasswordField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Dogs Shelter");
         setBackground(new java.awt.Color(255, 153, 255));
+        setResizable(false);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dogs.jpg"))); // NOI18N
 

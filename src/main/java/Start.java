@@ -1,13 +1,14 @@
 
 
 import view.Authorization;
+import view.SplashScreen;
 
 public class Start {
 
 
     public static void main(String[] args) {
         
-        new Authorization().setVisible(true);
+        new SplashScreen().setVisible(true);
 
         
 
