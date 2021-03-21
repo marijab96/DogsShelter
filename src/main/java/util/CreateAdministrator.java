@@ -11,10 +11,10 @@ public class CreateAdministrator {
         Administrator a = new Administrator();
         a.setFirstName("Marija");
         a.setLastName("Bralić");
-        a.setEmail("marija.bralic96@gmail.com");
+        a.setEmail("dogsshelter@gmail.com");
         a.setOib(OibCheck.getOibIsCentral());
         a.setUserName("marija");
-        a.setPassword(BCrypt.hashpw("marija", BCrypt.gensalt()));
+        a.setPassword(BCrypt.hashpw("fredi", BCrypt.gensalt()));
 
 
         AdministratorProcessor ap = new AdministratorProcessor();

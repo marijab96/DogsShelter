@@ -24,8 +24,9 @@ public class Authorization extends javax.swing.JFrame {
      * Creates new form Authorization
      */
     public Authorization() {
-        initComponents();
         
+        initComponents(); 
+        setTitle(Application.TITLE_APP);
         txtEmail.setText("dogsshelter@gmail.com");
         pswPassword.setText("fredi");
     }
@@ -39,84 +40,87 @@ public class Authorization extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblLogIn = new javax.swing.JLabel();
+        pswPassword = new javax.swing.JPasswordField();
+        jLabel5 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        btnLogIn = new javax.swing.JButton();
-        pswPassword = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Dogs Shelter");
         setBackground(new java.awt.Color(255, 153, 255));
         setResizable(false);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dogs.jpg"))); // NOI18N
+        jPanel1.setLayout(null);
 
-        jLabel2.setText("E-mail");
-
-        txtEmail.setFont(new java.awt.Font("Padauk", 0, 12)); // NOI18N
-        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtEmailKeyReleased(evt);
+        lblLogIn.setFont(new java.awt.Font("Karumbi", 3, 36)); // NOI18N
+        lblLogIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLogIn.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/loginpaw.png")); // NOI18N
+        lblLogIn.setText("Log In");
+        lblLogIn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblLogInMousePressed(evt);
             }
         });
+        jPanel1.add(lblLogIn);
+        lblLogIn.setBounds(510, 390, 110, 30);
 
-        jLabel3.setText("Password");
-
-        btnLogIn.setText("Log In");
-        btnLogIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogInActionPerformed(evt);
-            }
-        });
-
+        pswPassword.setBackground(new java.awt.Color(226, 226, 226));
         pswPassword.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 pswPasswordKeyReleased(evt);
             }
         });
+        jPanel1.add(pswPassword);
+        pswPassword.setBounds(470, 340, 210, 40);
+
+        jLabel5.setFont(new java.awt.Font("Dyuthi", 0, 18)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/keyicon.png")); // NOI18N
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(410, 340, 50, 40);
+
+        txtEmail.setBackground(new java.awt.Color(233, 233, 233));
+        txtEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtEmailKeyReleased(evt);
+            }
+        });
+        jPanel1.add(txtEmail);
+        txtEmail.setBounds(470, 280, 210, 40);
+
+        jLabel3.setFont(new java.awt.Font("Dyuthi", 0, 18)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/user.png")); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(410, 280, 50, 40);
+
+        jLabel2.setFont(new java.awt.Font("Karumbi", 3, 80)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Dogs Shelter");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(390, 60, 330, 150);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/fredi2dog.jpg")); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 10, 340, 510);
+
+        jLabel4.setBackground(new java.awt.Color(102, 255, 255));
+        jLabel4.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/dogbac.jpg")); // NOI18N
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(280, 0, 460, 530);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(63, 63, 63)
-                                .addComponent(pswPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(96, 96, 96)
-                                .addComponent(btnLogIn))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(347, 347, 347)
-                                .addComponent(jLabel3))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 899, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(pswPassword)
-                        .addComponent(btnLogIn)))
-                .addGap(61, 61, 61))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
         );
 
         pack();
@@ -124,30 +128,33 @@ public class Authorization extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyReleased
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER 
-                && !txtEmail.getText().isEmpty() ){
-            pswPassword.requestFocus();
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER 
+                && !txtEmail.getText().isEmpty()){
+           pswPassword.requestFocus();
         }
     }//GEN-LAST:event_txtEmailKeyReleased
 
     private void pswPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pswPasswordKeyReleased
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER &&
-                pswPassword.getPassword().length > 0){
-            logIn();
+         if(evt.getKeyCode()==KeyEvent.VK_ENTER &&
+                pswPassword.getPassword().length>0){
+             logIn();
         }
     }//GEN-LAST:event_pswPasswordKeyReleased
 
-    private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
-        logIn();
-    }//GEN-LAST:event_btnLogInActionPerformed
+    private void lblLogInMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogInMousePressed
+       logIn();
+    }//GEN-LAST:event_lblLogInMousePressed
 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLogIn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblLogIn;
     private javax.swing.JPasswordField pswPassword;
     private javax.swing.JTextField txtEmail;
     // End of variables declaration//GEN-END:variables
@@ -179,12 +186,14 @@ public class Authorization extends javax.swing.JFrame {
             erorrHandler(pswPassword, "E-mail and password are not valid");
             return;
         }
-
         
-        
-        
-        
-       
+        a.setPassword(null);
+        Application.administrator=a;
+        new Menu().setVisible(true);
+        dispose();  
+      
+    
+           
     }
     
     private void erorrHandler(JComponent component, String message){

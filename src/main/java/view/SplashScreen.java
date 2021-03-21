@@ -34,6 +34,8 @@ public class SplashScreen extends javax.swing.JFrame {
             if (s.getMetamodel().getEntities().size() > 0) {
                 new Authorization().setVisible(true);
                 dispose();
+            }else {
+                JOptionPane.showMessageDialog(rootPane, "Database problem.");
             }
         }
         

@@ -20,6 +20,15 @@ public class Administrator extends model.Entity {
     private String userName;
     private String password;
     private String email;
+    
+    public String getFirstNameLastName(){
+
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(getFirstName()).append(" ").append(getLastName());
+
+            return sb.toString();
+    }
 
 
 }
