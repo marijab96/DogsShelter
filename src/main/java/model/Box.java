@@ -30,6 +30,15 @@ public class Box extends Entity {
     @JoinColumn(name = "box_id")
     private List<Dog> dogs = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return getName();
+    }
+    
+    
+
+    
+
 
 
 

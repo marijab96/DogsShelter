@@ -5,6 +5,7 @@ import model.Box;
 import util.MyException;
 import java.math.BigDecimal;
 import java.util.List;
+import org.hibernate.CacheMode;
 
 
 public class BoxProcessor extends Processor<Box> {
@@ -17,8 +18,13 @@ public class BoxProcessor extends Processor<Box> {
     }
 
     @Override
-    public List<Box> getData() {
-        return session.createQuery("from Box").list();
+    public List<Box> getData() {            
+        
+        List<Box> listBoxs =session.createQuery("from Box").list();
+        
+        session.setCacheMode(CacheMode.IGNORE);
+        
+        return listBoxs;
     }
 
     @Override
