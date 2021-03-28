@@ -31,4 +31,11 @@ public class Sickness extends Entity {
     )
     private List<DogSickness> dogSickness = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return name;
+    }
+    
+    
+
 }
