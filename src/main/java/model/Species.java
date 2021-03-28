@@ -23,4 +23,11 @@ public class Species extends Entity{
     @JoinColumn(name = "species_id")
     private List<Dog> dogs = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return getName();
+    }
+    
+    
+
 }

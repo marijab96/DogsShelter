@@ -17,6 +17,7 @@ public class SpeciesProcessor extends Processor<Species>{
 
        controlNameSet();
        controlNameLength();
+        controlIsNameUnique();
 
     }
 
@@ -25,6 +26,7 @@ public class SpeciesProcessor extends Processor<Species>{
 
        controlNameSet();
        controlNameLength();
+        controlIsNameUnique();
 
     }
 
@@ -68,6 +70,21 @@ public class SpeciesProcessor extends Processor<Species>{
 
         }
 
+
+    }
+
+    private void controlIsNameUnique() throws MyException{
+
+        var speciesList = session
+                .createQuery("from Species s where s.name=:name")
+                .setParameter("name", entity.getName())
+                .list();
+
+        if(speciesList.size() > 0){
+
+            throw new MyException("That species already exist, name must be unique.");
+
+        }
 
     }
 }
