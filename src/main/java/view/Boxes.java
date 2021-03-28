@@ -50,48 +50,38 @@ public class Boxes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        lstBoxes = new javax.swing.JList<>();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
         txtName = new java.awt.TextField();
-        jLabel2 = new javax.swing.JLabel();
+        lblCapacity = new javax.swing.JLabel();
         txtCapacity = new java.awt.TextField();
-        jLabel3 = new javax.swing.JLabel();
+        lblSize = new javax.swing.JLabel();
         txtSize = new java.awt.TextField();
-        jLabel4 = new javax.swing.JLabel();
+        lblEmployee = new javax.swing.JLabel();
         cmbEmployee = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
-        cmbDog = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         btnAdd = new javax.swing.JButton();
-        btnChange = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
         lblMessage = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        lstBoxes = new javax.swing.JList<>();
+        btnDelete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(137, 196, 244));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lstBoxes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        lstBoxes.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                lstBoxesValueChanged(evt);
-            }
-        });
-        jScrollPane1.setViewportView(lstBoxes);
+        jPanel1.setBackground(new java.awt.Color(137, 196, 244));
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 360, 460));
+        lblName.setText("Name");
 
-        jLabel1.setText("Name");
+        lblCapacity.setText("Capacity");
 
-        jLabel2.setText("Capacity");
+        lblSize.setText("Size");
 
-        jLabel3.setText("Size");
-
-        jLabel4.setText("Employee");
-
-        jLabel5.setText("Dog");
+        lblEmployee.setText("Employee");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -103,43 +93,39 @@ public class Boxes extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(txtCapacity, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
                         .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblName, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lblCapacity, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblSize, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSize, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbDog, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                    .addComponent(lblEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(lblName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblSize, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(txtSize, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(cmbEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(cmbDog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 370, 460));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 380, 510));
+
+        jPanel2.setBackground(new java.awt.Color(137, 196, 244));
 
         jLabel7.setText("Control boxes");
 
@@ -150,17 +136,17 @@ public class Boxes extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(126, 126, 126)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(558, Short.MAX_VALUE))
+                .addContainerGap(778, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(31, 31, 31))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 890, 90));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 90));
 
         btnAdd.setText("Add");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -170,13 +156,24 @@ public class Boxes extends javax.swing.JFrame {
         });
         getContentPane().add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 190, 80, -1));
 
-        btnChange.setText("Change");
-        btnChange.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnChangeActionPerformed(evt);
+                btnUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btnChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
+        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
+        getContentPane().add(lblMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 280, 40));
+
+        jPanel3.setBackground(new java.awt.Color(137, 196, 244));
+
+        lstBoxes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        lstBoxes.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                lstBoxesValueChanged(evt);
+            }
+        });
+        jScrollPane1.setViewportView(lstBoxes);
 
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -184,8 +181,32 @@ public class Boxes extends javax.swing.JFrame {
                 btnDeleteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, -1, -1));
-        getContentPane().add(lblMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 280, 40));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(132, 132, 132)
+                .addComponent(btnDelete)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(239, 239, 239)
+                        .addComponent(btnDelete)))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 730, 510));
 
         pack();
         setLocationRelativeTo(null);
@@ -243,7 +264,7 @@ public class Boxes extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnAddActionPerformed
 
-    private void btnChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         if (processor.getEntity()==null || 
                 processor.getEntity().getId() == null) {
            JOptionPane.showMessageDialog(rootPane, "Please first select item");
@@ -264,7 +285,7 @@ public class Boxes extends javax.swing.JFrame {
         }    
                
         
-    }//GEN-LAST:event_btnChangeActionPerformed
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
          if (processor.getEntity()==null || 
@@ -353,25 +374,7 @@ public class Boxes extends javax.swing.JFrame {
    
    }
    
-   
-   private void loadDog(){
-       
-       DefaultComboBoxModel<Dog> dog =
-               new DefaultComboBoxModel<>();
-              
-       Dog d = new Dog();
-       d.setId(-1L);
-       d.setName("Choose dog");
-       dog.addElement(d);
-       dog.addAll(new DogProcessor().getData());
-       
-       
-       cmbDog.setModel(dog);     
-       cmbDog.setSelectedIndex(0);
-   
-        
-   
-   }
+  
    
    private void cleanUp(){
        
@@ -385,20 +388,19 @@ public class Boxes extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnChange;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JComboBox<Dog> cmbDog;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JComboBox<Employee> cmbEmployee;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblCapacity;
+    private javax.swing.JLabel lblEmployee;
     private javax.swing.JLabel lblMessage;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblSize;
     private javax.swing.JList<Box> lstBoxes;
     private java.awt.TextField txtCapacity;
     private java.awt.TextField txtName;
