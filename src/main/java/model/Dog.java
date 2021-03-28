@@ -19,7 +19,7 @@ public class Dog extends Entity{
 
     private String name;
     private Long chipNumber;
-    private String dateOfBirth;           ;
+    private String yearOfBirth;           ;
     private boolean adopted;
     @ManyToOne
     private Box box;
@@ -38,6 +38,13 @@ public class Dog extends Entity{
             orphanRemoval = true
     )
     private List<DogSickness> dogSicknesses = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return getName();
+    }
+    
+    
 
 
 }
