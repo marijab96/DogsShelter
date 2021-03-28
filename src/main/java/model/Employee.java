@@ -31,5 +31,12 @@ public class Employee extends Entity {
     @JoinColumn(name = "employee_id")
     private List<Box> boxes = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return getFirstName() + " " + getLastName();
+    }
+    
+    
+
 }
 
