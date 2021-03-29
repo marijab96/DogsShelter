@@ -5,27 +5,38 @@ import model.Box;
 import util.MyException;
 import java.math.BigDecimal;
 import java.util.List;
-import org.hibernate.CacheMode;
 
 
 public class BoxProcessor extends Processor<Box> {
 
     public BoxProcessor(){
-        super();
+        
     }
-    public BoxProcessor(Box b){
-        super(b);
-    }
-
+   
     @Override
-    public List<Box> getData() {            
+    public List<Box> getData() {       
+             
+       
+         return session.createQuery("from Box").list();
         
-        List<Box> listBoxs =session.createQuery("from Box").list();
-        
-        session.setCacheMode(CacheMode.IGNORE);
-        
-        return listBoxs;
     }
+    
+     public List<Box> getData(String condition) {            
+       
+         return session.createQuery("from Box b"
+         + " where concat(b.name)"
+         +" like :condition")
+         .setParameter("condition", "%" + condition + "%")
+         .setMaxResults(100)
+         .list();
+    }
+     
+    
+    
+    
+    
+    
+   
 
     @Override
     protected void controlCreate() throws MyException {
