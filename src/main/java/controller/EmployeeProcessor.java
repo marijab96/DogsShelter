@@ -12,6 +12,19 @@ public class EmployeeProcessor extends Processor<Employee>{
     public List<Employee> getData() {
         return session.createQuery("from Employee").list();
     }
+    
+     public List<Employee> getData(String condition) {            
+       
+         return session.createQuery("from Employee e"
+                + " where concat(e.firstName, ' ', e.lastName) "
+                + " like :condition order by e.lastName, e.firstName")
+                .setParameter("condition", "%" + condition + "%")                
+                .setMaxResults(100)
+                .list();
+    }
+     
+     
+    
 
     @Override
     protected void controlCreate() throws MyException {
