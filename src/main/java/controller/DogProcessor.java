@@ -22,6 +22,7 @@ public class DogProcessor extends Processor<Dog>{
         controlEmployeeSet();
         controlBoxSet();
         controlSpeciesSet();
+        controlIsChipNumberUnique();
 
     }
 
@@ -34,6 +35,7 @@ public class DogProcessor extends Processor<Dog>{
         controlEmployeeSet();
         controlBoxSet();
         controlSpeciesSet();
+        controlIsChipNumberUnique();
 
     }
 
@@ -94,6 +96,21 @@ public class DogProcessor extends Processor<Dog>{
         if(entity.getSpecies() == null){
 
             throw new MyException("Please enter species for this dog.");
+
+        }
+
+    }
+
+    private void controlIsChipNumberUnique() throws MyException{
+
+        var dogsList = session
+                .createQuery("from Dog d where d.chipNumber=:chipNumber")
+                .setParameter("chipNumber", entity.getChipNumber())
+                .list();
+
+        if(dogsList.size() > 0){
+
+            throw new MyException("That chip number already exist, chip number must be unique.");
 
         }
 

@@ -14,25 +14,33 @@ import java.util.Date;
 @NoArgsConstructor
 @javax.persistence.Entity(name = "DogSickness")
 @Table(name = "Dog_Sickness")
-public class DogSickness {
+public class DogSickness extends Entity{
 
 
-    @EmbeddedId
-    private DogSicknessId id;
 
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("dogId")
+    @ManyToOne//(fetch = FetchType.LAZY)
     private Dog dog;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("sicknessId")
-    private Sickness sickness;
+    @ManyToOne//(fetch = FetchType.LAZY)
+     private Sickness sickness;
 
-    @Column(name = "date_of_treatment")
-    private Date dateoftreatment = new Date();
+    //@Column(name = "date_of_treatment")
+    private Date dateoftreatment;
 
-    @Column(name = "medicine")
+   // @Column(name = "medicine")
     private String medicine;
+
+
+    @Override
+    public String toString() {
+        return "DogSickness{" +
+                "dog=" + dog +
+                ", sickness=" + sickness +
+                ", dateoftreatment=" + dateoftreatment +
+                ", medicine='" + medicine + '\'' +
+                '}';
+    }
 }
+
+

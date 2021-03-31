@@ -32,12 +32,19 @@ public class Dog extends Entity{
     private Species species;
 
 
-    @OneToMany(
-            mappedBy = "dog",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
-    private List<DogSickness> dogSicknesses = new ArrayList<>();
+    @OneToMany(mappedBy = "dog")
+    private List<DogSickness> sicknesses = new ArrayList<>();
+
+    public List<DogSickness> getSicknesses() {
+        return sicknesses;
+    }
+
+    public void setSicknesses(List<DogSickness> sicknesses) {
+        this.sicknesses = sicknesses;
+    }
+
+
+
 
     @Override
     public String toString() {

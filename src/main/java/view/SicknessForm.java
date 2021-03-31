@@ -17,14 +17,14 @@ import util.MyException;
  *
  * @author mbralic
  */
-public class SicknessView extends javax.swing.JFrame {
+public class SicknessForm extends javax.swing.JFrame {
     
     private SicknessProcessor processor;
 
     /**
      * Creates new form SicknessView
      */
-    public SicknessView() {
+    public SicknessForm() {
         initComponents();
         setTitle(Application.TITLE_APP + " Sickness");
         processor = new SicknessProcessor();
@@ -54,7 +54,7 @@ public class SicknessView extends javax.swing.JFrame {
         btnDelete = new javax.swing.JButton();
         lblMessage = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(137, 196, 244));
 
@@ -180,6 +180,7 @@ public class SicknessView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void lstSicknessValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstSicknessValueChanged
