@@ -1,6 +1,7 @@
 package controller;
 
 
+import model.Box;
 import model.Species;
 import util.MyException;
 import java.util.List;
@@ -11,6 +12,18 @@ public class SpeciesProcessor extends Processor<Species>{
     public List<Species> getData() {
         return session.createQuery("from Species").list();
     }
+
+
+    public List<Species> getData(String condition) {
+
+        return session.createQuery("from Species s"
+                + " where concat(s.name)"
+                +" like :condition")
+                .setParameter("condition", "%" + condition + "%")
+                .setMaxResults(100)
+                .list();
+    }
+
 
     @Override
     protected void controlCreate() throws MyException {
