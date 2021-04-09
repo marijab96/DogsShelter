@@ -19,8 +19,8 @@ public class Dog extends Entity{
 
     private String name;
     private Long chipNumber;
-    private String yearOfBirth;           ;
-    private boolean adopted;
+    private Integer yearOfBirth;           ;
+    private Integer yearOfAdopt;
     @ManyToOne
     private Box box;
 

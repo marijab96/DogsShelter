@@ -108,6 +108,14 @@ public class DogProcessor extends Processor<Dog>{
                 .setParameter("chipNumber", entity.getChipNumber())
                 .list();
 
+        for(Object dogObject : dogsList) {
+            Dog dog = (Dog) dogObject;
+            if(dog.getId().equals(entity.getId())) {
+                dogsList.remove(dog);
+                break;
+            }
+        }
+
         if(dogsList.size() > 0){
 
             throw new MyException("That chip number already exist, chip number must be unique.");
