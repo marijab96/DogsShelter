@@ -21,22 +21,17 @@ public class BoxProcessor extends Processor<Box> {
         
     }
     
-     public List<Box> getData(String condition) {            
+     public List<Box> getData(String condition) {
        
          return session.createQuery("from Box b"
-         + " where concat(b.name)"
+         + " where b.name "
          +" like :condition")
          .setParameter("condition", "%" + condition + "%")
          .setMaxResults(100)
          .list();
     }
-     
     
-    
-    
-    
-    
-   
+
 
     @Override
     protected void controlCreate() throws MyException {
@@ -121,16 +116,29 @@ public class BoxProcessor extends Processor<Box> {
 
     private void controlIsNameUnique() throws MyException{
 
-        var boxList = session
+        var boxesList = session
                 .createQuery("from Box b where b.name=:name")
                 .setParameter("name", entity.getName())
                 .list();
+        
+        
+        
+        for(Object boxObject : boxesList) {
+            Box box = (Box) boxObject;
+            if(box.getId().equals(entity.getId())) {
+                boxesList.remove(box);
+                break;
+            }
+        }
 
-        if(boxList.size() > 0){
+        if(boxesList.size() > 0){
 
             throw new MyException("Name of box already exist, please enter other name.");
 
         }
+        
+        
+
 
     }
 
