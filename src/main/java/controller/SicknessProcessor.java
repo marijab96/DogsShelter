@@ -11,6 +11,17 @@ public class SicknessProcessor extends Processor<Sickness>{
     public List<Sickness> getData() {
         return session.createQuery("from Sickness").list();
     }
+    
+    
+     public List<Sickness> getData(String condition) {
+
+        return session.createQuery("from Sickness s"
+                + " where concat(s.name)"
+                +" like :condition")
+                .setParameter("condition", "%" + condition + "%")
+                .setMaxResults(100)
+                .list();
+    }
 
     @Override
     protected void controlCreate() throws MyException {
