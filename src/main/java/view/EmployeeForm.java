@@ -44,13 +44,9 @@ public class EmployeeForm extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        txtFirstName = new java.awt.TextField();
         jLabel3 = new javax.swing.JLabel();
-        txtLastName = new java.awt.TextField();
         jLabel4 = new javax.swing.JLabel();
-        txtOIB = new java.awt.TextField();
         jLabel5 = new javax.swing.JLabel();
-        txtMobileNumber = new java.awt.TextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lstEmployee = new javax.swing.JList<>();
@@ -62,6 +58,11 @@ public class EmployeeForm extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtCondition = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        txtFirstName = new javax.swing.JTextField();
+        txtLastName = new javax.swing.JTextField();
+        txtOIB = new javax.swing.JTextField();
+        txtMobileNumber = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(137, 196, 244));
@@ -70,22 +71,25 @@ public class EmployeeForm extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(137, 196, 244));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
         jLabel2.setText("First Name");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 190, -1));
-        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 230, 30));
 
+        jLabel3.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
         jLabel3.setText("Last Name");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 160, -1));
-        jPanel1.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 220, 40));
 
+        jLabel4.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
         jLabel4.setText("OIB");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 150, 20));
-        jPanel1.add(txtOIB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 220, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 150, 20));
 
+        jLabel5.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
         jLabel5.setText("Mobile Number");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, 180, 20));
-        jPanel1.add(txtMobileNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, 210, 20));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 480, 180, 20));
 
+        lstEmployee.setBackground(new java.awt.Color(228, 241, 254));
+        lstEmployee.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lstEmployee.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
         lstEmployee.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 lstEmployeeValueChanged(evt);
@@ -103,37 +107,49 @@ public class EmployeeForm extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 170, 310, 460));
 
+        btnAdd.setBackground(new java.awt.Color(228, 241, 254));
+        btnAdd.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
+        btnAdd.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconadd.png")); // NOI18N
         btnAdd.setText("Add");
+        btnAdd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, -1, -1));
+        jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 100, 40));
 
+        btnUpdate.setBackground(new java.awt.Color(228, 241, 254));
+        btnUpdate.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
+        btnUpdate.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconeupdate.png")); // NOI18N
         btnUpdate.setText("Update");
+        btnUpdate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
             }
         });
-        jPanel1.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, -1, -1));
+        jPanel1.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 100, 40));
 
+        btnDelete.setBackground(new java.awt.Color(228, 241, 254));
+        btnDelete.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/icondelete.png")); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, -1, -1));
-        jPanel1.add(lblMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 414, 200, 20));
+        jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 100, 40));
+
+        lblMessage.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
+        jPanel1.add(lblMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, 310, 20));
 
         jPanel3.setBackground(new java.awt.Color(52, 152, 219));
         jPanel3.setPreferredSize(new java.awt.Dimension(1110, 78));
@@ -162,20 +178,58 @@ public class EmployeeForm extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 990, 90));
 
+        txtCondition.setBackground(new java.awt.Color(228, 241, 254));
+        txtCondition.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+        txtCondition.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtCondition.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtConditionActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCondition, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 128, 270, 30));
+        jPanel1.add(txtCondition, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 128, 210, 30));
 
+        btnSearch.setBackground(new java.awt.Color(228, 241, 254));
+        btnSearch.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
+        btnSearch.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconsearch.png")); // NOI18N
         btnSearch.setText("Search");
+        btnSearch.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 130, -1, -1));
+        jPanel1.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(839, 127, 90, 30));
+
+        jButton1.setBackground(new java.awt.Color(228, 241, 254));
+        jButton1.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconclear.png")); // NOI18N
+        jButton1.setText("Clean");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 580, -1, -1));
+
+        txtFirstName.setBackground(new java.awt.Color(228, 241, 254));
+        txtFirstName.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+        txtFirstName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 240, 40));
+
+        txtLastName.setBackground(new java.awt.Color(228, 241, 254));
+        txtLastName.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+        txtLastName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 240, 40));
+
+        txtOIB.setBackground(new java.awt.Color(228, 241, 254));
+        txtOIB.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+        txtOIB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(txtOIB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 240, 40));
+
+        txtMobileNumber.setBackground(new java.awt.Color(228, 241, 254));
+        txtMobileNumber.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+        txtMobileNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(txtMobileNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 510, 240, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 650));
 
@@ -275,6 +329,10 @@ public class EmployeeForm extends javax.swing.JFrame {
         lstEmployee.setModel(m);
     }//GEN-LAST:event_btnSearchActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       cleanUp();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
      private void loadData(){
        
        DefaultListModel<Employee> em = new DefaultListModel<>();
@@ -319,6 +377,7 @@ public class EmployeeForm extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -331,10 +390,10 @@ public class EmployeeForm extends javax.swing.JFrame {
     private javax.swing.JLabel lblMessage;
     private javax.swing.JList<Employee> lstEmployee;
     private javax.swing.JTextField txtCondition;
-    private java.awt.TextField txtFirstName;
-    private java.awt.TextField txtLastName;
-    private java.awt.TextField txtMobileNumber;
-    private java.awt.TextField txtOIB;
+    private javax.swing.JTextField txtFirstName;
+    private javax.swing.JTextField txtLastName;
+    private javax.swing.JTextField txtMobileNumber;
+    private javax.swing.JTextField txtOIB;
     // End of variables declaration//GEN-END:variables
 }
 

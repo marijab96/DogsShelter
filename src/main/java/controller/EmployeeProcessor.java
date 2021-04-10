@@ -32,6 +32,7 @@ public class EmployeeProcessor extends Processor<Employee>{
         controlFirsAndLastNameSet();
         controlOibCheck();
         controlMobileNumber();
+        controlOibCheckrUnique();
 
 
     }
@@ -42,6 +43,7 @@ public class EmployeeProcessor extends Processor<Employee>{
         controlFirsAndLastNameSet();
         controlOibCheck();
         controlMobileNumber();
+        controlOibCheckrUnique();
 
     }
 
@@ -66,6 +68,28 @@ public class EmployeeProcessor extends Processor<Employee>{
         if(!OibCheck.oibValidation(entity.getOib())){
 
             throw  new MyException("Oib is not valid.");
+
+        }
+    }
+    
+     private void controlOibCheckrUnique() throws MyException{
+
+       var employeeList = session
+                .createQuery("from Employee e where e.oib=:oib")
+                .setParameter("oib", entity.getOib())
+                .list();
+
+        for(Object employeeObject : employeeList) {
+            Employee employee = (Employee) employeeObject;
+            if(employee.getId().equals(entity.getId())) {
+                employeeList.remove(employee);
+                break;
+            }
+        }
+
+        if(employeeList.size() > 0){
+
+            throw new MyException("That OIB already exist, OIB must be unique.");
 
         }
     }
