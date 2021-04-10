@@ -67,6 +67,7 @@ public class SpeciesForm extends javax.swing.JFrame {
 
         lstSpecies.setBackground(new java.awt.Color(228, 241, 254));
         lstSpecies.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lstSpecies.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
         lstSpecies.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 lstSpeciesValueChanged(evt);
@@ -150,6 +151,7 @@ public class SpeciesForm extends javax.swing.JFrame {
         );
 
         txtName.setBackground(new java.awt.Color(228, 241, 254));
+        txtName.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
         txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jButton2.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
@@ -162,6 +164,7 @@ public class SpeciesForm extends javax.swing.JFrame {
         });
 
         txtCondition.setBackground(new java.awt.Color(228, 241, 254));
+        txtCondition.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
         txtCondition.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnSearch.setBackground(new java.awt.Color(228, 241, 254));
@@ -215,7 +218,7 @@ public class SpeciesForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCondition, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
