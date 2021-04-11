@@ -11,14 +11,16 @@ import controller.DogSicknessProcessor;
 import controller.EmployeeProcessor;
 import controller.SicknessProcessor;
 import controller.SpeciesProcessor;
+
+import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.DefaultListModel;
-import javax.swing.JOptionPane;
+import javax.swing.*;
+
 import model.Dog;
 import model.Employee;
 import model.Box;
@@ -64,11 +66,8 @@ public class DogForm extends javax.swing.JFrame {
     private void initComponents() {
 
         JPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
-        txtName = new java.awt.TextField();
         lblChipNumber = new javax.swing.JLabel();
-        textChipNumber = new java.awt.TextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -90,11 +89,8 @@ public class DogForm extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         lstDogSickness = new javax.swing.JList<>();
         dpDateOftreatment = new com.github.lgooddatepicker.components.DatePicker();
-        btnAddDate = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btnAddMedicine = new javax.swing.JButton();
-        txtMedicine = new java.awt.TextField();
         jButton1 = new javax.swing.JButton();
         ycYearofbirth = new com.toedter.calendar.JYearChooser();
         lblYearOfAdopt = new javax.swing.JLabel();
@@ -102,19 +98,35 @@ public class DogForm extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         chbAdopted = new javax.swing.JCheckBox();
         btnExport = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        txtMedicine = new javax.swing.JTextField();
+        btnInfo = new javax.swing.JButton();
+        txtName = new javax.swing.JTextField();
+        textChipNumber = new javax.swing.JTextField();
+        txtConditionDog = new javax.swing.JTextField();
+        btnSearchDog = new javax.swing.JButton();
+        txtCondition = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         JPanel2.setBackground(new java.awt.Color(137, 196, 244));
 
-        jLabel1.setText("Control dogs");
-
         lblName.setText("Name");
+        lblName.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
 
         lblChipNumber.setText("Chip Number");
+        lblChipNumber.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
 
         jLabel3.setText("Year of Birth");
+        jLabel3.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
 
+        lstDogs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lstDogs.setBackground(new java.awt.Color(228, 241, 254));
+        lstDogs.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
         lstDogs.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 lstDogsValueChanged(evt);
@@ -130,289 +142,425 @@ public class DogForm extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
         );
 
         lblEmployee.setText("Employee");
+        lblEmployee.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
+
+        cmbEmployee.setBackground(new java.awt.Color(228, 241, 254));
+        cmbEmployee.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cmbEmployee.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
 
         lblBox.setText("Box");
+        lblBox.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
+
+        cmbBox.setBackground(new java.awt.Color(228, 241, 254));
+        cmbBox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cmbBox.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
 
         lblSpecies.setText("Species");
+        lblSpecies.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
 
+        cmbSpecies.setBackground(new java.awt.Color(228, 241, 254));
+        cmbSpecies.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cmbSpecies.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+
+        btnAdd.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconadd.png")); // NOI18N
         btnAdd.setText("Add");
+        btnAdd.setBackground(new java.awt.Color(228, 241, 254));
+        btnAdd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAdd.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
 
+        btnUpdate.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconeupdate.png")); // NOI18N
         btnUpdate.setText("Update");
+        btnUpdate.setBackground(new java.awt.Color(228, 241, 254));
+        btnUpdate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnUpdate.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
             }
         });
 
+        btnDelete.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/icondelete.png")); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.setBackground(new java.awt.Color(228, 241, 254));
+        btnDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnDelete.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
 
+        lblMessage.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
+
+        lstSickness.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lstSickness.setBackground(new java.awt.Color(228, 241, 254));
+        lstSickness.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
         jScrollPane2.setViewportView(lstSickness);
 
-        btnAddSickness.setText("<<");
+        btnAddSickness.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconadd2.png")); // NOI18N
+        btnAddSickness.setBackground(new java.awt.Color(228, 241, 254));
+        btnAddSickness.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnAddSickness.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddSicknessActionPerformed(evt);
             }
         });
 
-        btnDeleteSickness.setText(">>");
+        btnDeleteSickness.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/icondelete2.png")); // NOI18N
+        btnDeleteSickness.setBackground(new java.awt.Color(228, 241, 254));
+        btnDeleteSickness.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnDeleteSickness.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteSicknessActionPerformed(evt);
             }
         });
 
+        lstDogSickness.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lstDogSickness.setBackground(new java.awt.Color(228, 241, 254));
+        lstDogSickness.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
         jScrollPane3.setViewportView(lstDogSickness);
 
-        btnAddDate.setText("Add Date");
-        btnAddDate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddDateActionPerformed(evt);
-            }
-        });
+        dpDateOftreatment.setBackground(new java.awt.Color(228, 241, 254));
+        dpDateOftreatment.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        dpDateOftreatment.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
 
         jLabel2.setText("Date of treatment");
+        jLabel2.setFont(new java.awt.Font("Nimbus Mono L", 3, 16)); // NOI18N
 
         jLabel4.setText("Medicine");
+        jLabel4.setFont(new java.awt.Font("Nimbus Mono L", 3, 16)); // NOI18N
 
-        btnAddMedicine.setText("Add Medicine");
-        btnAddMedicine.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddMedicineActionPerformed(evt);
-            }
-        });
-
+        jButton1.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconclear.png")); // NOI18N
         jButton1.setText("Clean");
+        jButton1.setBackground(new java.awt.Color(228, 241, 254));
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton1.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        ycYearofbirth.setBackground(new java.awt.Color(228, 241, 254));
+        ycYearofbirth.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ycYearofbirth.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
+
         lblYearOfAdopt.setText("Year of Adopt");
+        lblYearOfAdopt.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
+
+        ycYearofAdopt.setBackground(new java.awt.Color(228, 241, 254));
+        ycYearofAdopt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ycYearofAdopt.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
 
         chbAdopted.setText("Adopted");
+        chbAdopted.setBackground(new java.awt.Color(137, 196, 244));
+        chbAdopted.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
         chbAdopted.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 chbAdoptedStateChanged(evt);
             }
         });
 
+        btnExport.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconexcel.png")); // NOI18N
         btnExport.setText("Export");
+        btnExport.setBackground(new java.awt.Color(228, 241, 254));
+        btnExport.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnExport.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         btnExport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExportActionPerformed(evt);
             }
         });
 
+        jPanel2.setBackground(new java.awt.Color(52, 152, 219));
+        jPanel2.setPreferredSize(new java.awt.Dimension(1110, 78));
+
+        jLabel5.setFont(new java.awt.Font("Purisa", 3, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/icon.png")); // NOI18N
+        jLabel5.setText("Dog management ");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        txtMedicine.setBackground(new java.awt.Color(228, 241, 254));
+        txtMedicine.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        txtMedicine.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+
+        btnInfo.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/infoicon.png")); // NOI18N
+        btnInfo.setBackground(new java.awt.Color(228, 241, 254));
+        btnInfo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInfoActionPerformed(evt);
+            }
+        });
+
+        txtName.setBackground(new java.awt.Color(228, 241, 254));
+        txtName.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+        txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        textChipNumber.setBackground(new java.awt.Color(228, 241, 254));
+        textChipNumber.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+        textChipNumber.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        txtConditionDog.setBackground(new java.awt.Color(228, 241, 254));
+        txtConditionDog.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+        txtConditionDog.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        btnSearchDog.setBackground(new java.awt.Color(228, 241, 254));
+        btnSearchDog.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconsearch.png")); // NOI18N
+        btnSearchDog.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnSearchDog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchDogActionPerformed(evt);
+            }
+        });
+
+        txtCondition.setBackground(new java.awt.Color(228, 241, 254));
+        txtCondition.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+        txtCondition.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jButton3.setBackground(new java.awt.Color(228, 241, 254));
+        jButton3.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconsearch.png")); // NOI18N
+        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
+        jLabel1.setText("Sicknesses of dogs");
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/separator.png")); // NOI18N
+
         javax.swing.GroupLayout JPanel2Layout = new javax.swing.GroupLayout(JPanel2);
         JPanel2.setLayout(JPanel2Layout);
         JPanel2Layout.setHorizontalGroup(
             JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPanel2Layout.createSequentialGroup()
-                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JPanel2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(JPanel2Layout.createSequentialGroup()
-                                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(JPanel2Layout.createSequentialGroup()
-                                        .addGap(8, 8, 8)
-                                        .addComponent(lblChipNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(JPanel2Layout.createSequentialGroup()
-                                        .addGap(11, 11, 11)
-                                        .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(textChipNumber, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                                        .addComponent(txtName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JPanel2Layout.createSequentialGroup()
-                                            .addComponent(chbAdopted)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(JPanel2Layout.createSequentialGroup()
-                                            .addComponent(lblYearOfAdopt)
-                                            .addGap(62, 62, 62)
-                                            .addComponent(ycYearofAdopt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(cmbEmployee, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(JPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ycYearofbirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(51, 51, 51)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(JPanel2Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(lblBox, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(156, 156, 156)
-                                .addComponent(btnAdd)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnUpdate)
-                                .addGap(35, 35, 35)
-                                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnDelete)
-                                    .addComponent(btnExport)))))
-                    .addGroup(JPanel2Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(lblSpecies, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JPanel2Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnDeleteSickness)
-                            .addComponent(btnAddSickness))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29))
-                    .addGroup(JPanel2Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(JPanel2Layout.createSequentialGroup()
-                                .addComponent(dpDateOftreatment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnAddDate))
-                            .addComponent(jLabel4)
-                            .addComponent(txtMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(351, Short.MAX_VALUE))))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1531, Short.MAX_VALUE)
             .addGroup(JPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(JPanel2Layout.createSequentialGroup()
-                        .addComponent(cmbBox, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblSpecies, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbSpecies, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                        .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(258, 258, 258))
+                    .addGroup(JPanel2Layout.createSequentialGroup()
+                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JPanel2Layout.createSequentialGroup()
+                                .addComponent(lblYearOfAdopt)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ycYearofAdopt, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(ycYearofbirth, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textChipNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblChipNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(JPanel2Layout.createSequentialGroup()
+                                        .addGap(63, 63, 63)
+                                        .addComponent(chbAdopted))))
+                            .addComponent(cmbBox, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblBox, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAddMedicine)
-                        .addGap(315, 315, 315))
-                    .addGroup(JPanel2Layout.createSequentialGroup()
-                        .addComponent(cmbSpecies, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(JPanel2Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jButton1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JPanel2Layout.createSequentialGroup()
+                                .addComponent(txtConditionDog)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnSearchDog, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(46, 46, 46))
+                            .addGroup(JPanel2Layout.createSequentialGroup()
+                                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnExport, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(JPanel2Layout.createSequentialGroup()
+                                            .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)))
+                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPanel2Layout.createSequentialGroup()
+                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtCondition, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(JPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)))
+                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAddSickness, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnDeleteSickness, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPanel2Layout.createSequentialGroup()
+                                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4)
+                                    .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(JPanel2Layout.createSequentialGroup()
+                                            .addGap(12, 12, 12)
+                                            .addComponent(dpDateOftreatment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel2))
+                                    .addComponent(txtMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(9, 9, 9)))))
+                .addGap(43, 43, 43))
         );
         JPanel2Layout.setVerticalGroup(
             JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(JPanel2Layout.createSequentialGroup()
-                            .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(JPanel2Layout.createSequentialGroup()
-                                    .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(28, 28, 28)
-                                    .addComponent(lblChipNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(textChipNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(35, 35, 35)
-                                    .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(ycYearofbirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(29, 29, 29)
-                                    .addComponent(chbAdopted)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel6)
-                                    .addGap(66, 66, 66)
-                                    .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(JPanel2Layout.createSequentialGroup()
+                    .addGroup(JPanel2Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(JPanel2Layout.createSequentialGroup()
+                                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtConditionDog, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnSearchDog, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(JPanel2Layout.createSequentialGroup()
+                                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPanel2Layout.createSequentialGroup()
+                                                .addComponent(btnAdd)
+                                                .addGap(8, 8, 8))
+                                            .addGroup(JPanel2Layout.createSequentialGroup()
+                                                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(JPanel2Layout.createSequentialGroup()
+                                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(30, 30, 30)
+                                                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                            .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(btnDelete)))
+                                                    .addGroup(JPanel2Layout.createSequentialGroup()
+                                                        .addGap(15, 15, 15)
+                                                        .addComponent(txtCondition, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(7, 7, 7)))
+                                        .addComponent(jLabel2))
+                                    .addGroup(JPanel2Layout.createSequentialGroup()
+                                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(33, 33, 33)
+                                        .addComponent(lblChipNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(textChipNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ycYearofbirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(chbAdopted)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(lblYearOfAdopt)
-                                            .addGap(45, 45, 45)
-                                            .addComponent(lblEmployee))
-                                        .addComponent(ycYearofAdopt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(JPanel2Layout.createSequentialGroup()
-                                    .addGap(101, 101, 101)
-                                    .addComponent(btnAddSickness)
-                                    .addGap(47, 47, 47)
-                                    .addComponent(btnDeleteSickness)))
-                            .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(JPanel2Layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(cmbEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(JPanel2Layout.createSequentialGroup()
-                                    .addGap(2, 2, 2)
-                                    .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JPanel2Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblBox)
-                            .addComponent(btnExport)))
-                    .addGroup(JPanel2Layout.createSequentialGroup()
+                                            .addComponent(ycYearofAdopt, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                                        .addComponent(lblEmployee)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cmbEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblBox)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cmbBox, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(44, 44, 44))))
+                            .addGroup(JPanel2Layout.createSequentialGroup()
+                                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(JPanel2Layout.createSequentialGroup()
+                                        .addGap(152, 152, 152)
+                                        .addComponent(btnAddSickness, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(31, 31, 31)
+                                        .addComponent(btnDeleteSickness, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(JPanel2Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dpDateOftreatment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addGap(14, 14, 14)
-                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dpDateOftreatment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAddDate))))
-                .addGap(31, 31, 31)
-                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JPanel2Layout.createSequentialGroup()
-                        .addComponent(cmbBox, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(lblSpecies))
-                    .addGroup(JPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JPanel2Layout.createSequentialGroup()
+                        .addGap(555, 555, 555)
+                        .addComponent(lblSpecies)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAddMedicine)
-                            .addComponent(txtMedicine, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addComponent(cmbSpecies, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(28, 28, 28))
-            .addGroup(JPanel2Layout.createSequentialGroup()
-                .addGap(541, 541, 541)
-                .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnDelete))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(JPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cmbSpecies, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnExport, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(JPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(JPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(JPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(JPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -441,7 +589,6 @@ public class DogForm extends javax.swing.JFrame {
             return;
        }
         
-        
         setValuetoEntity();
 
         try {
@@ -461,8 +608,7 @@ public class DogForm extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(rootPane, "Please first select item");
             return;
        }
-        
-        
+                
         setValuetoEntity();
 
         try {
@@ -516,50 +662,83 @@ public class DogForm extends javax.swing.JFrame {
             ycYearofAdopt.setValue(processor.getEntity().getYearOfAdopt());
         }
 
-
-        
-       
         cmbEmployee.setSelectedItem(processor.getEntity().getEmployee());
         cmbBox.setSelectedItem(processor.getEntity().getBox());
         cmbSpecies.setSelectedItem(processor.getEntity().getSpecies());
+
+        DefaultListModel<DogSickness> s =
+                new  DefaultListModel<>();
+
+        Dog dog = v;
+        for(DogSickness dogSickness : dsprocessor.getData()) {
+            if(dogSickness.getDog().getId().equals(dog.getId())) {
+                s.addElement(dogSickness);
+            }
+        }
+     
+
+        lstDogSickness.setModel(s);
     }//GEN-LAST:event_lstDogsValueChanged
 
     private void btnAddSicknessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSicknessActionPerformed
          
         DefaultListModel<DogSickness> ds;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String treatmentTime = dpDateOftreatment.getDate().atStartOfDay().format(formatter);
+
         try {
           ds= (DefaultListModel<DogSickness>) lstDogSickness.getModel();
-            ds.get(0).toString();
+
         } catch (Exception e) {
             ds= new DefaultListModel<>();
             lstDogSickness.setModel(ds);
         }
         boolean bo;
+        DogSickness dogSickness = null;
        for(Sickness s : lstSickness.getSelectedValuesList()){
            bo=false;
            for(int i=0;i<ds.size();i++){
                if(s.getId().equals(ds.get(i).getSickness().getId())){
+                   dogSickness = ds.get(i);
                    bo=true;
                    break;
                }
            }
+
            if(!bo){
-               DogSickness dogSickness = new DogSickness();
+               dogSickness = new DogSickness();
                dogSickness.setDog(lstDogs.getSelectedValue());
                dogSickness.setSickness(s);
-               dogSickness.setDateoftreatment(new Date()); 
+               dogSickness.setDateoftreatment(treatmentTime);
                dogSickness.setMedicine(txtMedicine.getText());
                ds.addElement(dogSickness);
+               try {
+                   dsprocessor.setEntity(dogSickness);
+                   dsprocessor.create();
+               } catch (MyException e) {
+                   System.out.println(e.getMessage());
+               }
+           } else {
+               dogSickness.setDog(lstDogs.getSelectedValue());
+               dogSickness.setSickness(s);
+               dogSickness.setDateoftreatment(treatmentTime);
+               dogSickness.setMedicine(txtMedicine.getText());
+
+               try {
+                   dsprocessor.setEntity(dogSickness);
+                   dsprocessor.update();
+               } catch (MyException e) {
+                   System.out.println(e.getMessage());               }
            }
        }
-        
         lstDogSickness.repaint();
+        
     }//GEN-LAST:event_btnAddSicknessActionPerformed
 
     private void btnDeleteSicknessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteSicknessActionPerformed
- 
-        
+       
         DefaultListModel<DogSickness> ds;
+        
         try {
             ds=(DefaultListModel<DogSickness>) lstDogSickness.getModel();
             ds.get(0).toString();
@@ -578,33 +757,6 @@ public class DogForm extends javax.swing.JFrame {
           
        }    }//GEN-LAST:event_btnDeleteSicknessActionPerformed
 
-    private void btnAddDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDateActionPerformed
-                                                     
-        if (lstDogSickness.getSelectedValue() == null) {
-            return;
-        }
-         DogSickness ds = lstDogSickness.getSelectedValue();
-         
-          if(dpDateOftreatment.getDate()!=null){
-           ds.setDateoftreatment(
-                   Date.from(dpDateOftreatment.getDate()
-                           .atStartOfDay()
-                   .atZone(ZoneId.systemDefault()).toInstant())
-           );
-       }
-          
-          try {
-              dsprocessor.setEntity(ds);
-            dsprocessor.update();
-        } catch (MyException e) {
-              System.out.println(e.getMessage());
-        }
-    }//GEN-LAST:event_btnAddDateActionPerformed
-
-    private void btnAddMedicineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMedicineActionPerformed
-     
-    }//GEN-LAST:event_btnAddMedicineActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         cleanUp();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -622,9 +774,28 @@ public class DogForm extends javax.swing.JFrame {
     }//GEN-LAST:event_chbAdoptedStateChanged
 
     private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
+      
         ExcelWriter.dogsInExcel(processor.getData());
 
     }//GEN-LAST:event_btnExportActionPerformed
+
+    private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
+      
+        JOptionPane.showMessageDialog(null, "1. Select the dog that you want to assign the disease to..\n2. Select the illness, the date of treatment and the medication that the dog received and press the add button."
+                + "", "Instructions for adding disease to the dog.\n", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnInfoActionPerformed
+
+    private void btnSearchDogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchDogActionPerformed
+         DefaultListModel<Dog> d = new DefaultListModel<>();
+         d.addAll(processor.getData(txtConditionDog.getText()));
+         lstDogs.setModel(d);
+    }//GEN-LAST:event_btnSearchDogActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        DefaultListModel<Sickness> s = new DefaultListModel<>();
+         s.addAll(sprocessor.getData(txtCondition.getText()));
+         lstSickness.setModel(s);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -634,12 +805,12 @@ public class DogForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPanel2;
     private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnAddDate;
-    private javax.swing.JButton btnAddMedicine;
     private javax.swing.JButton btnAddSickness;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnDeleteSickness;
     private javax.swing.JButton btnExport;
+    private javax.swing.JButton btnInfo;
+    private javax.swing.JButton btnSearchDog;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JCheckBox chbAdopted;
     private javax.swing.JComboBox<Box> cmbBox;
@@ -647,12 +818,16 @@ public class DogForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<Species> cmbSpecies;
     private com.github.lgooddatepicker.components.DatePicker dpDateOftreatment;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -666,16 +841,19 @@ public class DogForm extends javax.swing.JFrame {
     private javax.swing.JList<DogSickness> lstDogSickness;
     private javax.swing.JList<Dog> lstDogs;
     private javax.swing.JList<Sickness> lstSickness;
-    private java.awt.TextField textChipNumber;
-    private java.awt.TextField txtMedicine;
-    private java.awt.TextField txtName;
+    private javax.swing.JTextField textChipNumber;
+    private javax.swing.JTextField txtCondition;
+    private javax.swing.JTextField txtConditionDog;
+    private javax.swing.JTextField txtMedicine;
+    private javax.swing.JTextField txtName;
     private com.toedter.calendar.JYearChooser ycYearofAdopt;
     private com.toedter.calendar.JYearChooser ycYearofbirth;
     // End of variables declaration//GEN-END:variables
 
     private void loadData() {
         
-         DefaultListModel<Dog> d = new DefaultListModel<>();
+         
+       DefaultListModel<Dog> d = new DefaultListModel<>();
         
              
        processor.getData().forEach(g -> {
@@ -683,7 +861,7 @@ public class DogForm extends javax.swing.JFrame {
        });
        
 
-        lstDogs.setModel(d);
+       lstDogs.setModel(d);
        
     }
 
@@ -708,7 +886,8 @@ public class DogForm extends javax.swing.JFrame {
     }
 
     private void loadBox() {
-         DefaultComboBoxModel<Box> b =
+         
+        DefaultComboBoxModel<Box> b =
                new DefaultComboBoxModel<>();
        
        
@@ -725,6 +904,7 @@ public class DogForm extends javax.swing.JFrame {
     }
 
     private void loadSpecies() {
+        
         DefaultComboBoxModel<Species> s =
                new DefaultComboBoxModel<>();
        
@@ -749,7 +929,7 @@ public class DogForm extends javax.swing.JFrame {
        
         
              
-       sprocessor.getData().forEach(g -> {
+        sprocessor.getData().forEach(g -> {
            s.addElement(g);
        });
        
@@ -765,7 +945,7 @@ public class DogForm extends javax.swing.JFrame {
     private void setValuetoEntity(){
        
        
-       var entity =processor.getEntity();      
+       var entity = processor.getEntity();
        
             
        entity.setName(txtName.getText());

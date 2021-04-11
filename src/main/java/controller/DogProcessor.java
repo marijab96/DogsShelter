@@ -12,6 +12,16 @@ public class DogProcessor extends Processor<Dog>{
     public List<Dog> getData() {
         return session.createQuery("from Dog ").list();
     }
+    
+    public List<Dog> getData(String conditionDog) {
+
+        return session.createQuery("from Dog d"
+                + " where (d.name)"
+                +" like :conditionDog")
+                .setParameter("conditionDog", "%" + conditionDog + "%")
+                .setMaxResults(100)
+                .list();
+    }
 
     @Override
     protected void controlCreate() throws MyException {

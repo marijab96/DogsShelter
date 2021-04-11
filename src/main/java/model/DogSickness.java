@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -18,23 +19,23 @@ public class DogSickness extends Entity{
 
 
 
-    @ManyToOne//(fetch = FetchType.LAZY)
+    @ManyToOne
     private Dog dog;
 
 
-    @ManyToOne//(fetch = FetchType.LAZY)
-     private Sickness sickness;
+    @ManyToOne
+    private Sickness sickness;
 
-    //@Column(name = "date_of_treatment")
-    private Date dateoftreatment;
+    
+    private String dateoftreatment;
 
-   // @Column(name = "medicine")
+   
     private String medicine;
 
 
     @Override
     public String toString() {
-        return "DogSickness{" +
+        return "Dog Sickness{" +
                 "dog=" + dog +
                 ", sickness=" + sickness +
                 ", dateoftreatment=" + dateoftreatment +
