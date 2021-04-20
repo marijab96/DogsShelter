@@ -187,7 +187,7 @@ public class Authorization extends javax.swing.JFrame {
             return;
         }
         
-        a.setPassword(null);
+
         Application.administrator=a;
         new Menu().setVisible(true);
         dispose();  

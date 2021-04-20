@@ -23,7 +23,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
-        setTitle(Application.TITLE_APP + " " + Application.administrator.getFirstNameLastName());
+        setTitle(Application.TITLE_APP + " Menu");
         new Time().start();
     }
     
@@ -102,17 +102,32 @@ public class Menu extends javax.swing.JFrame {
         lblEmployee.setFont(new java.awt.Font("Purisa", 3, 20)); // NOI18N
         lblEmployee.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconemployee.png")); // NOI18N
         lblEmployee.setText("  Employee");
+        lblEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblEmployeeMousePressed(evt);
+            }
+        });
         jPanel1.add(lblEmployee, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 210, 60));
 
         lblSickness.setFont(new java.awt.Font("Purisa", 3, 20)); // NOI18N
         lblSickness.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconforsickness.png")); // NOI18N
         lblSickness.setText("  Sickness");
+        lblSickness.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblSicknessMousePressed(evt);
+            }
+        });
         jPanel1.add(lblSickness, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 230, 60));
 
         lblSpecies.setFont(new java.awt.Font("Purisa", 3, 20)); // NOI18N
         lblSpecies.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconforspecies.png")); // NOI18N
         lblSpecies.setText("  Species");
-        jPanel1.add(lblSpecies, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 200, 60));
+        lblSpecies.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblSpeciesMousePressed(evt);
+            }
+        });
+        jPanel1.add(lblSpecies, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 220, 60));
 
         jPanel3.setBackground(new java.awt.Color(137, 196, 244));
 
@@ -129,46 +144,58 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 210, 80));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 590));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 600));
 
         jPanel2.setBackground(new java.awt.Color(52, 73, 94));
 
-        lblTimeAndDate.setFont(new java.awt.Font("Purisa", 3, 12)); // NOI18N
-        lblTimeAndDate.setForeground(new java.awt.Color(153, 255, 255));
+        lblTimeAndDate.setFont(new java.awt.Font("Nimbus Mono L", 2, 18)); // NOI18N
+        lblTimeAndDate.setForeground(new java.awt.Color(137, 196, 244));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(567, Short.MAX_VALUE)
-                .addComponent(lblTimeAndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(473, Short.MAX_VALUE)
+                .addComponent(lblTimeAndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(lblTimeAndDate, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addComponent(lblTimeAndDate, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 520, 790, 70));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 540, 780, 60));
 
         jLabel4.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/homepage.jpg")); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 780, 520));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 780, 540));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblBoxMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBoxMousePressed
-        new Boxes().setVisible(true);
+        new BoxForm().setVisible(true);
     }//GEN-LAST:event_lblBoxMousePressed
 
     private void lblDogMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDogMousePressed
-       new Dogs().setVisible(true);
+       new DogForm().setVisible(true);
     }//GEN-LAST:event_lblDogMousePressed
+
+    private void lblEmployeeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEmployeeMousePressed
+       new EmployeeForm().setVisible(true);
+    }//GEN-LAST:event_lblEmployeeMousePressed
+
+    private void lblSpeciesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSpeciesMousePressed
+       new SpeciesForm().setVisible(true);
+    }//GEN-LAST:event_lblSpeciesMousePressed
+
+    private void lblSicknessMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSicknessMousePressed
+       new SicknessForm().setVisible(true);
+    }//GEN-LAST:event_lblSicknessMousePressed
 
     
     

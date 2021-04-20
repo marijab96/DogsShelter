@@ -2,14 +2,12 @@ package util;
 
 
 import com.github.javafaker.Faker;
-import controller.AdministratorProcessor;
 import model.*;
 import org.hibernate.Session;
-import org.mindrot.jbcrypt.BCrypt;
 
 import java.math.BigDecimal;
 
-
+/*
 public class InitialFixtures {
 
     public static void start(){
@@ -69,7 +67,7 @@ public class InitialFixtures {
             d.setName(faker.funnyName().name());
             d.setAdopted(true);
             d.setBox(box);
-            d.setDateOfBirth("2020-20-02");
+            d.setYearOfBirth(2020);
             d.setSpecies(specie);
             s.save(d);
         }
@@ -80,3 +78,4 @@ public class InitialFixtures {
     }
 
 }
+*/
