@@ -81,43 +81,43 @@ public class BoxForm extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(137, 196, 244));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        lblName.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
         lblName.setText("Name");
+        lblName.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
 
-        lblCapacity.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
         lblCapacity.setText("Capacity");
+        lblCapacity.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
 
-        lblSize.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
         lblSize.setText("Size");
+        lblSize.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
 
-        lblEmployee.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
         lblEmployee.setText("Employee");
+        lblEmployee.setFont(new java.awt.Font("Nimbus Mono L", 3, 18)); // NOI18N
 
         cmbEmployee.setBackground(new java.awt.Color(228, 241, 254));
-        cmbEmployee.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
         cmbEmployee.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        cmbEmployee.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
 
+        jButton1.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconclean.png")); // NOI18N
+        jButton1.setText("Clean");
         jButton1.setBackground(new java.awt.Color(228, 241, 254));
-        jButton1.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconclear.png")); // NOI18N
-        jButton1.setText("Clear");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton1.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        txtName.setBackground(new java.awt.Color(228, 241, 254));
         txtName.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+        txtName.setBackground(new java.awt.Color(228, 241, 254));
         txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtCapacity.setBackground(new java.awt.Color(228, 241, 254));
         txtCapacity.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+        txtCapacity.setBackground(new java.awt.Color(228, 241, 254));
         txtCapacity.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtSize.setBackground(new java.awt.Color(228, 241, 254));
         txtSize.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+        txtSize.setBackground(new java.awt.Color(228, 241, 254));
         txtSize.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -130,13 +130,12 @@ public class BoxForm extends javax.swing.JFrame {
                     .addComponent(txtCapacity, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
                     .addComponent(txtName)
                     .addComponent(lblCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lblEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cmbEmployee, 0, 244, Short.MAX_VALUE)
-                        .addComponent(lblSize, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtSize)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblName))
+                    .addComponent(lblEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbEmployee, 0, 247, Short.MAX_VALUE)
+                    .addComponent(lblSize, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSize)
+                    .addComponent(lblName)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(103, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -170,10 +169,10 @@ public class BoxForm extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(52, 152, 219));
 
-        jLabel1.setFont(new java.awt.Font("Purisa", 3, 22)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/icon.png")); // NOI18N
         jLabel1.setText("Box management ");
+        jLabel1.setFont(new java.awt.Font("Purisa", 3, 22)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -221,33 +220,33 @@ public class BoxForm extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lstBoxes);
 
-        btnDelete.setBackground(new java.awt.Color(228, 241, 254));
-        btnDelete.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         btnDelete.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/icondelete.png")); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.setBackground(new java.awt.Color(228, 241, 254));
         btnDelete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnDelete.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
 
-        btnAdd.setBackground(new java.awt.Color(228, 241, 254));
-        btnAdd.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         btnAdd.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconadd.png")); // NOI18N
         btnAdd.setText("Add");
+        btnAdd.setBackground(new java.awt.Color(228, 241, 254));
         btnAdd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAdd.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
 
-        btnUpdate.setBackground(new java.awt.Color(228, 241, 254));
-        btnUpdate.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         btnUpdate.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconeupdate.png")); // NOI18N
         btnUpdate.setText("Update");
+        btnUpdate.setBackground(new java.awt.Color(228, 241, 254));
         btnUpdate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnUpdate.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
@@ -256,8 +255,8 @@ public class BoxForm extends javax.swing.JFrame {
 
         lblMessage.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
 
-        txtCondition.setBackground(new java.awt.Color(228, 241, 254));
         txtCondition.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N
+        txtCondition.setBackground(new java.awt.Color(228, 241, 254));
         txtCondition.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtCondition.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -265,11 +264,11 @@ public class BoxForm extends javax.swing.JFrame {
             }
         });
 
-        btnSearch.setBackground(new java.awt.Color(228, 241, 254));
-        btnSearch.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         btnSearch.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconsearch.png")); // NOI18N
         btnSearch.setText("Search");
+        btnSearch.setBackground(new java.awt.Color(228, 241, 254));
         btnSearch.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnSearch.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);

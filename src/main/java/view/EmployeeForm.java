@@ -202,14 +202,14 @@ public class EmployeeForm extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(228, 241, 254));
         jButton1.setFont(new java.awt.Font("Nimbus Mono L", 3, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconclear.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconclean.png")); // NOI18N
         jButton1.setText("Clean");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 580, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 580, 110, -1));
 
         txtFirstName.setBackground(new java.awt.Color(228, 241, 254));
         txtFirstName.setFont(new java.awt.Font("Nimbus Mono L", 0, 14)); // NOI18N

@@ -55,14 +55,12 @@
                       <Component id="txtCapacity" pref="247" max="32767" attributes="0"/>
                       <Component id="txtName" max="32767" attributes="0"/>
                       <Component id="lblCapacity" min="-2" pref="216" max="-2" attributes="0"/>
-                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="lblEmployee" min="-2" pref="90" max="-2" attributes="0"/>
-                          <Component id="cmbEmployee" pref="244" max="32767" attributes="0"/>
-                          <Component id="lblSize" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                          <Component id="txtSize" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jButton1" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="lblEmployee" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="cmbEmployee" pref="247" max="32767" attributes="0"/>
+                      <Component id="lblSize" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                      <Component id="txtSize" alignment="0" max="32767" attributes="0"/>
                       <Component id="lblName" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton1" alignment="0" min="-2" pref="92" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="103" max="32767" attributes="0"/>
               </Group>
@@ -97,51 +95,51 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblName">
           <Properties>
+            <Property name="text" type="java.lang.String" value="Name"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nimbus Mono L" size="18" style="3"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Name"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblCapacity">
           <Properties>
+            <Property name="text" type="java.lang.String" value="Capacity"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nimbus Mono L" size="18" style="3"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Capacity"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblSize">
           <Properties>
+            <Property name="text" type="java.lang.String" value="Size"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nimbus Mono L" size="18" style="3"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Size"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblEmployee">
           <Properties>
+            <Property name="text" type="java.lang.String" value="Employee"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nimbus Mono L" size="18" style="3"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Employee"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="cmbEmployee">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f1" red="e4" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nimbus Mono L" size="14" style="0"/>
-            </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="0"/>
+            </Property>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fe" green="f1" red="e4" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
               </Border>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Nimbus Mono L" size="14" style="0"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -150,20 +148,20 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconclean.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Clean"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="fe" green="f1" red="e4" type="rgb"/>
             </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nimbus Mono L" size="14" style="3"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconclear.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Clear"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
               </Border>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Nimbus Mono L" size="14" style="3"/>
             </Property>
           </Properties>
           <Events>
@@ -172,11 +170,11 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtName">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f1" red="e4" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nimbus Mono L" size="14" style="0"/>
+            </Property>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fe" green="f1" red="e4" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -187,11 +185,11 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCapacity">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f1" red="e4" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nimbus Mono L" size="14" style="0"/>
+            </Property>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fe" green="f1" red="e4" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -202,11 +200,11 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtSize">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f1" red="e4" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nimbus Mono L" size="14" style="0"/>
+            </Property>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fe" green="f1" red="e4" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -276,16 +274,16 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/icon.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Box management "/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Purisa" size="22" style="3"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/icon.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Box management "/>
               </Properties>
             </Component>
           </SubComponents>
@@ -399,20 +397,20 @@
         </Container>
         <Component class="javax.swing.JButton" name="btnDelete">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f1" red="e4" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nimbus Mono L" size="14" style="3"/>
-            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="2" name="/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/icondelete.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Delete"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fe" green="f1" red="e4" type="rgb"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
               </Border>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Nimbus Mono L" size="14" style="3"/>
             </Property>
           </Properties>
           <Events>
@@ -421,20 +419,20 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnAdd">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f1" red="e4" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nimbus Mono L" size="14" style="3"/>
-            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="2" name="/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconadd.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Add"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fe" green="f1" red="e4" type="rgb"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
               </Border>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Nimbus Mono L" size="14" style="3"/>
             </Property>
           </Properties>
           <Events>
@@ -443,20 +441,20 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnUpdate">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f1" red="e4" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nimbus Mono L" size="14" style="3"/>
-            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="2" name="/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconeupdate.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Update"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fe" green="f1" red="e4" type="rgb"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
               </Border>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Nimbus Mono L" size="14" style="3"/>
             </Property>
           </Properties>
           <Events>
@@ -472,11 +470,11 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtCondition">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f1" red="e4" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Nimbus Mono L" size="14" style="0"/>
+            </Property>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fe" green="f1" red="e4" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -490,20 +488,20 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnSearch">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="fe" green="f1" red="e4" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Nimbus Mono L" size="14" style="3"/>
-            </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="2" name="/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconsearch.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Search"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fe" green="f1" red="e4" type="rgb"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder/>
               </Border>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Nimbus Mono L" size="14" style="3"/>
             </Property>
           </Properties>
           <Events>

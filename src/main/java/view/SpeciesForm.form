@@ -59,7 +59,7 @@
                           <Component id="btnAdd" min="-2" pref="96" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
+                              <Group type="102" attributes="0">
                                   <Component id="txtCondition" min="-2" pref="204" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
@@ -95,7 +95,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="34" max="32767" attributes="0"/>
+                  <EmptySpace pref="30" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txtCondition" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="btnSearch" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
@@ -337,9 +337,9 @@
               <Font name="Nimbus Mono L" size="14" style="3"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconclear.png"/>
+              <Image iconType="2" name="/home/mbralic/IDEA Projekt/DogsShelter/src/main/resources/iconclean.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Clear"/>
+            <Property name="text" type="java.lang.String" value="Clean"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
