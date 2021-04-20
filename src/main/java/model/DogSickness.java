@@ -6,7 +6,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Getter
@@ -22,25 +25,22 @@ public class DogSickness extends Entity{
     @ManyToOne
     private Dog dog;
 
-
     @ManyToOne
     private Sickness sickness;
 
-    
-    private String dateoftreatment;
+    private LocalDate dateoftreatment;
 
-   
     private String medicine;
 
 
     @Override
     public String toString() {
-        return "Dog Sickness{" +
-                "dog=" + dog +
-                ", sickness=" + sickness +
-                ", dateoftreatment=" + dateoftreatment +
-                ", medicine='" + medicine + '\'' +
-                '}';
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+        return sickness + ", " +
+                dateoftreatment.atStartOfDay().format(formatter) + ", " +
+                medicine;
     }
 }
 

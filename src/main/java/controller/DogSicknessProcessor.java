@@ -16,11 +16,13 @@ public class DogSicknessProcessor extends Processor<DogSickness> {
 
     @Override
     protected void controlCreate() throws MyException {
+       controlDogIsSet();
 
     }
 
     @Override
     protected void controlUpdate() throws MyException {
+        controlDogIsSet();
 
     }
 
@@ -28,4 +30,12 @@ public class DogSicknessProcessor extends Processor<DogSickness> {
     protected void controlDelete() throws MyException {
 
     }
-}
+
+   private void controlDogIsSet() throws MyException{
+
+        if(entity.getDog() == null ){
+
+            throw new MyException("Dog must be selected.");
+
+        }
+    }}
